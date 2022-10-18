@@ -6,14 +6,16 @@ include_once('connection.php');
 	  
 	$database = new Connection();
     $db = $database->open();
+  	$image = $_POST['image'];
     $title = $_POST['title'];
     $year = $_POST['year'];
     $media = $_POST['media'];
     $artist = $_POST['artist'];
     $style = $_POST['style'];
+  	$thumbnail = $_POST['thumbnail'];
 
     try {
-        $sql = "INSERT INTO `content`(`title`, `year`, `media`, `artist`, `style`) VALUES ('$title','$year','$media','$artist','$style')";
+        $sql = "INSERT INTO `content`(`image`, `title`, `year`, `media`, `artist`, `style`, `thumbnail`) VALUES ('$image','$title','$year','$media','$artist','$style','$thumbnail')";
         $result = $db->query($sql);
 		echo "New work of art added to database";
     } catch(PDOException $e) {
