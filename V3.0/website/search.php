@@ -24,6 +24,8 @@
 		include_once('nav.php');
 	?>
 	
+	
+	
 	<div class="container">
     
     	<?php
@@ -52,27 +54,15 @@
 		<tbody>
 		  <?php
 			  foreach ($db->query($sql) as $row) {
-				echo '<tr> <form action="update.php">';
-					echo '<div class=form-group">';
-					echo '<td> <input type="search" readonly=true size=1 id="myid" name="id" value="' . $row['id'] . '"/> </td>';
-            		echo '<td> <input type="text" size=10 id="mytitle" name="title" value="' . $row['title'] . '"/> </td>';
-            		echo '<td> <input type="text" size=10 id="myyear" name="year" value="' . $row['year'] . '"/> </td>';
-            		echo '<td> <input type="text" size=10 id="mymedia" name="media" value="' . $row['media'] . '"/> </td>';
-            		echo '<td> <input type="text" size=10 id="myartist" name="artist" value="' . $row['artist'] . '"/> </td>';
-            		echo '<td> <input type="text" size=10 id="mystyle" name="style" value="' . $row['style'] . '"/> </td></div>';
-					echo '<td> <button type="submit" class="btn btn-default">Update</button></form> </td>';	
+				echo '<tr>';
+            		echo '<td>' . $row['id'] . '</td>';
+            		echo '<td>' . $row['title'] . '</td>';
+            		echo '<td>' . $row['year'] . '</td>';
+            		echo '<td>' . $row['media'] . '</td>';
+            		echo '<td>' . $row['artist'] . '</td>';
+            		echo '<td>' . $row['style'] . '</td>';
             	echo '</tr>';
-				
-				echo '<tr> <form action="delete.php">';
-					echo '<div class=form-group">';
-					echo '<td> <input type="search" hidden=true size=1 id="myid" name="id" value="' . $row['id'] . '"/> </td>';
-            		echo '<td> </td>';
-            		echo '<td> </td>';
-            		echo '<td> </td>';
-            		echo '<td> </td>';
-            		echo '<td> </td></div>';
-					echo '<td> <button type="submit" class="btn btn-default">Delete</button></form> </td>';			
-            	echo '</tr>';
+
 			  }
 			}
 			catch(PDOException $e){

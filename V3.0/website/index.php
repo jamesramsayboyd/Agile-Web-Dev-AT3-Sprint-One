@@ -45,7 +45,7 @@
 			  $sql = 'SELECT * FROM content';
 			  foreach ($db->query($sql) as $row) {
 				
-				echo '<tr> <form action="details.php">';
+				echo '<tr> <form action="edit.php">';
 					echo '<div class=form-group">';
 					echo '<td> <input type="search" readonly=true size=1 id="myid" name="q" value="' . $row['id'] . '"/> </td>';
             		echo '<td>' .
@@ -56,7 +56,7 @@
 					echo '<td>' . $row['media'] . '</td>';
 					echo '<td>' . $row['artist'] . '</td>';
 					echo '<td>' . $row['style'] . '</td>';
-					echo '<td> <button type="submit" class="btn btn-default">Details</button></form> </td>';	
+					echo '<td> <button type="submit" class="btn btn-default">Edit</button></form> </td>';	
             	echo '</tr>';
 			  }
 			}
